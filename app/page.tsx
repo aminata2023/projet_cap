@@ -35,7 +35,7 @@ export default function Home() {
             <Image
               key={index}
               src={src}
-              alt="Church congregation"
+              alt="Church congregation..."
               fill
               className={`object-cover brightness-[0.7] transition-opacity duration-1000 ${
                 index === currentImage ? "opacity-100" : "opacity-0"
