@@ -9,7 +9,7 @@ export default function AboutPage() {
       <section className="relative w-full h-[40vh] flex items-center justify-center">
         <Image
           src="/images/accueil1.jpg"
-          alt="Church building"
+          alt="Church building ..."
           fill
           className="object-cover brightness-[0.7]"
           priority
