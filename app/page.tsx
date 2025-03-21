@@ -19,9 +19,9 @@ export default function Home() {
         {(() => {
           const [currentImage, setCurrentImage] = useState(0);
           const images = [
-            "/images/PHOTO12.jpg?height=1080&width=1920",
-            "/images/PHOTO13.jpg?height=1080&width=1920",
-            "/images/PHOTO14.jpg?height=1080&width=1920"
+            "/images/12.jpg?height=1080&width=1920",
+            "/images/7.jpg?height=1080&width=1920",
+            "/images/27.jpg?height=1080&width=1920"
           ];
 
           useEffect(() => {
