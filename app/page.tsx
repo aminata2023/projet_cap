@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronRight, Calendar, Heart, MapPin, MessageSquare, Music } from "lucide-react"
@@ -5,34 +6,59 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BibleVerse } from "@/components/bible-verse"
 import { NewsletterSignup } from "@/components/newsletter-signup"
+import { useState, useEffect } from "react"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] flex items-center justify-center">
-        <Image
-          src="/images/accueil1.jpg?height=1080&width=1920"
-          alt="Church congregation"
-          fill
-          className="object-cover brightness-[0.7]"
-          priority
-        />
+      {/* Hero Section */}
+      
+       {/* Hero Section */}
+       <section className="relative w-full h-[80vh] flex items-center justify-center">
+        {(() => {
+          const [currentImage, setCurrentImage] = useState(0);
+          const images = [
+            "/images/PHOTO12.jpg?height=1080&width=1920",
+            "/images/PHOTO13.jpg?height=1080&width=1920",
+            "/images/PHOTO14.jpg?height=1080&width=1920"
+          ];
+
+          useEffect(() => {
+            const interval = setInterval(() => {
+              setCurrentImage((prev) => (prev + 1) % images.length);
+            }, 5000); // Change toutes les 5 secondes
+            return () => clearInterval(interval);
+          }, [images.length]);
+
+          return images.map((src, index) => (
+            <Image
+              key={index}
+              src={src}
+              alt="Church congregation"
+              fill
+              className={`object-cover brightness-[0.7] transition-opacity duration-1000 ${
+                index === currentImage ? "opacity-100" : "opacity-0"
+              }`}
+              priority={index === 0}
+            />
+          ));
+        })()}
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Welcome to Grace Community Church</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">BIENVENUE CHEZ CAPEC</h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-            A place of faith, hope, and love where everyone is welcome
+           
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white">
-              Join Us for Worship
+              Nous rejoindre
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20"
             >
-              Watch Latest Sermon
+              Suivez notre actualité
             </Button>
           </div>
         </div>
@@ -49,10 +75,11 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Welcome to Our Church Family</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Bienvenue chez CAPEC</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We are a vibrant community of believers dedicated to serving God and our community. Join us as we grow
-              together in faith and fellowship.
+            Nous sommes la Cellule d’Analyse de Politiques Économiques du CIRES, 
+            dédiée à l’étude et à l’évaluation des politiques 
+            publiques pour un développement durable en Côte d’Ivoire."
             </p>
           </div>
 

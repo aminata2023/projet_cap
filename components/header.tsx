@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image" // Assurez-vous d'importer Image
 import { Button } from "@/components/ui/button"
 import { Menu, X, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -34,9 +35,15 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
+            <Image
+              src="/images/LogoCAPEC.png"
+              alt="Grace Church Logo"
+              width={60}  
+              height={60} 
+              className="mr-2" // Ajoute une marge à droite pour l'espacement
+            />
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-sky-600">Grace</span>
-              <span className="text-2xl font-bold ml-1">Church</span>
+              <span className="text-2xl font-bold color: var(--color-black)">CAPEC</span>
             </Link>
           </div>
 
@@ -88,4 +95,3 @@ export function Header() {
     </header>
   )
 }
-
