@@ -37,7 +37,7 @@ export function Header() {
           <div className="flex items-center">
             <Image
               src="/images/LogoCAPEC.png"
-              alt="Grace Church Logo"
+              alt="logo de capec"
               width={60}  
               height={60} 
               className="mr-2" // Ajoute une marge à droite pour l'espacement
