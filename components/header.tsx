@@ -36,7 +36,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Image
-              src="/images/LogoCAPEC.png"
+              src="/images/logocapec.png"
               alt="logo de capec"
               width={60}  
               height={60} 
